@@ -1,0 +1,42 @@
+guardar todo en D
+
+iniciar oracle desde el bat
+
+buscar y habrir sql Plus
+
+poner SYS AS SYSDBA de usuario
+
+luego dar enter no hay pass
+
+meter la consulta prueba-inicaial-clientes.sql
+
+salimos del sql pus y bolbemos a entrar
+
+Para conectar al contenedor hay que cambiar el listener.ora en esta ruta
+C:\app\S2-PC00\product\21c\homes\OraDB21Home1\network\admin
+ La línea 19 pasa de ser
+ (ADDRESS = (PROTOCOL = TCP)(HOST = A10-P00)(PORT = 1521))
+a ser
+ (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+
+Y luego ejecutar estas dos lineas
+alter system set LOCAL_LISTENER='(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))' scope=both;
+alter system register;
+
+por sia caso 
+
+nos metemos con lolo:
+
+alter session set "_ORACLE_SCRIPT"=true;
+CREATE USER LOLO IDENTIFIED BY LOLO;
+GRANT CONNECT, RESOURCE, DBA TO LOLO;
+
+y luego bolbemos a ejecutar:
+alter system set LOCAL_LISTENER='(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))' scope=both;
+alter system register;
+
+conprobar el nonbre de conexion con el comando:
+
+define
+
+si no funciona apagamos oracle esperamos un poco y lo lanzamos de nuevo
